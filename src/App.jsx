@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import StartingPage from "./StartingPage";
+import QuizPage from "./QuizPage";
 
 function App() {
-  return (
-    <div>
-      <StartingPage />
+  const [isStarted, setIsStarted] = useState(false);
 
-      {/* Quizz  */}
-    </div>
-  );
+  return <div>{isStarted ? <StartingPage /> : <QuizPage />}</div>;
 }
 
 export default App;
