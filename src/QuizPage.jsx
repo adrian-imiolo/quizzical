@@ -2,6 +2,8 @@ import React from "react";
 import { decode } from "html-entities";
 
 function QuizPage(props) {
+  // Now make legit QuizPage so whole questions and answers will be displayed. Figure out in key={index} how to add unique index to every item. IDK how i got this index property. Then do the 2nd hint from Scrimba
+
   // this function returns array of questions from API
   const questionList = () => {
     let questionsArray = [];
@@ -21,9 +23,6 @@ function QuizPage(props) {
           return <li key={index}>{question}</li>;
         })}
       </ul>
-      {/* {props.quiz.map((question, index) => {
-        <p key={index}>{question.question}</p>;
-      })} */}
     </div>
   );
 }
