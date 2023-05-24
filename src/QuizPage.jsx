@@ -1,12 +1,12 @@
 import React from "react";
-import { encode } from "html-entities";
+import { decode } from "html-entities";
 
 function QuizPage(props) {
   // this function returns array of questions from API
   const questionList = () => {
     let questionsArray = [];
     for (let i = 0; i < props.quiz.length; i++) {
-      questionsArray.push(props.quiz[i].question);
+      questionsArray.push(decode(props.quiz[i].question));
     }
     return questionsArray;
   };
@@ -18,7 +18,7 @@ function QuizPage(props) {
       {console.log(questionList())}
       <ul>
         {questionList().map((question, index) => {
-          return <li key={index}>{encode(question)}</li>;
+          return <li key={index}>{question}</li>;
         })}
       </ul>
       {/* {props.quiz.map((question, index) => {
