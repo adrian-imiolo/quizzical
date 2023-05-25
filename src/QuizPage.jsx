@@ -15,12 +15,16 @@ function QuizPage(props) {
 
   return (
     <div>
-      <h2>Questions:</h2>
       {console.log(props.quiz)}
       {console.log(questionList())}
       <ul>
         {questionList().map((question, index) => {
-          return <li key={index}>{question}</li>;
+          return (
+            <div>
+              <li key={index}>{question}</li>
+              <hr />
+            </div>
+          );
         })}
       </ul>
     </div>
