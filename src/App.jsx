@@ -59,9 +59,10 @@ function App() {
       {isQuizStarted === false ? (
         <StartingPage startQuiz={startQuiz} />
       ) : (
-        <QuizPage quiz={quiz} />
+        <QuizPage quiz={quiz} answers={createAnswersArray()} />
       )}
       {/* {getQuestions()} */}
+      {console.log(questions)}
       {console.log(quiz)}
       {console.log(createAnswersArray())}
       {/* this fetchData() is only for now to make QuizPage render */}

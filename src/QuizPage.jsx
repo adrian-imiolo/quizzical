@@ -1,5 +1,6 @@
 import React from "react";
 import { decode } from "html-entities";
+import { v4 as uuidv4 } from "uuid";
 
 function QuizPage(props) {
   // Now make legit QuizPage so whole questions and answers will be displayed. Figure out in key={index} how to add unique index to every item. IDK how i got this index property. Then do the 2nd hint from Scrimba
