@@ -6,7 +6,6 @@ import { decode } from "html-entities";
 function App() {
   const [quiz, setQuiz] = useState([]);
   const [questions, setQuestions] = useState([]);
-
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   const [isPlayedAgain, setIsPlayAgain] = useState(false);
 
@@ -42,14 +41,9 @@ function App() {
   }
 
   function createAnswersArray() {
-    // make empty array
-    // add incorrect_answers to this array
-    // add correct_answer to this array
-    // shuffle newArray
     const answersArray = quiz.map((item) =>
       shuffleArray([...item.incorrect_answers, item.correct_answer])
     );
-
     return answersArray;
   }
 

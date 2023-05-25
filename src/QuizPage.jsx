@@ -4,17 +4,21 @@ import { decode } from "html-entities";
 function QuizPage(props) {
   // Now make legit QuizPage so whole questions and answers will be displayed. Figure out in key={index} how to add unique index to every item. IDK how i got this index property. Then do the 2nd hint from Scrimba
 
-  // this function returns array of questions from API
-  // const questionList = () => {
-  //   // let questionsArray = [];
-  //   // for (let i = 0; i < props.quiz.length; i++) {
-  //   //   questionsArray.push(decode(props.quiz[i].question));
-  //   // }
-  //   // return questionsArray;
-  // };
+  function setQuestionsAndAnswers() {}
 
   return (
     <div>
+      {/* How to render questions and answers?
+      // remember that u need to use key
+      // maybe create an array of objects [{question: question, answers: [answers]}], i think i can do it by just destructuring quiz array
+      // then probably i should do for loop over this array ?
+      
+      // comments below are questionable
+      // map over question array to get the questions
+      // map over answers array to get the answers (it should be in radio form
+      hr at the end) */}
+      {}
+
       {/* {console.log(props.quiz)} */}
       {/* {console.log(questionList())} */}
       {/* <ul>
