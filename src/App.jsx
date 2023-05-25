@@ -39,6 +39,9 @@ function App() {
     }
     return array;
   }
+  // ask chatGPT this question and you will receive good answer: ok, i'm doing quiz app, i'm fetching data from TRIVIA DB, i want to render 5 questions which i get from API, all questions have multiple answers i want to add below the question as separate buttons. i already know how to get data form API but i wonder what's the best way to make some function that creates some array of objects tha contains id, question and array of answers. then i will map through this array of objects to display data. do u think it's good idea? can u show me how to do it or do it better?
+
+  // maybe transform this function to make whole object(or array of objects because u need to get 5 elements from API) which contains: array of answers, question, and id
 
   function createAnswersArray() {
     const answersArray = quiz.map((item) =>
