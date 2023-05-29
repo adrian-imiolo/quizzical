@@ -10,7 +10,8 @@ function App() {
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   const [isPlayedAgain, setIsPlayedAgain] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [showResults, setShowResults] = useState(false);
   useEffect(() => {
     async function fetchData() {
       const questions = await getQuestions();
@@ -67,10 +68,16 @@ function App() {
   }
 
   function handleAnswerChange(questionId, selectedAnswer) {
-    setSelectedAnswers((prevSelectedAnswers) => ({
-      ...prevSelectedAnswers,
-      [questionId]: selectedAnswer,
-    }));
+    if (!showResults && !isDisabled) {
+      setSelectedAnswers((prevSelectedAnswers) => ({
+        ...prevSelectedAnswers,
+        [questionId]: selectedAnswer,
+      }));
+    }
+  }
+  function handleCheckAnswers() {
+    setShowResults(true);
+    setIsDisabled(true);
   }
 
   return (
@@ -84,7 +91,7 @@ function App() {
               <h2>{question.question}</h2>
               {question.answers.map((answer, index) => (
                 <label
-                  className={`answer-label ${
+                  className={`answer_label ${
                     selectedAnswers[question.id] === answer ? "selected" : ""
                   }`}
                   key={index}
@@ -95,13 +102,20 @@ function App() {
                     value={answer}
                     checked={selectedAnswers[question.id] === answer}
                     onChange={() => handleAnswerChange(question.id, answer)}
+                    disabled={isDisabled}
                   />
                   {answer}
                 </label>
               ))}
             </div>
           ))}
-          <button className="check_button">Check answers</button>
+          <button
+            className="check_button"
+            onClick={() => handleCheckAnswers()}
+            disabled={isDisabled}
+          >
+            Check answers
+          </button>
         </div>
       )}
       {console.log(questions)}

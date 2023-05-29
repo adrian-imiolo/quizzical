@@ -49,10 +49,14 @@
     display: none;
 }
 
-.answer-label.selected {
+.answer_label.selected {
     background-color: #D6DBF5;
   }
 
+  .answer_label input:disabled  {
+    color: grey; 
+    cursor: not-allowed;
+  }
 .check_button {
     border: none;
     border-radius: 15px;
