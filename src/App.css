@@ -1,0 +1,16 @@
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+.question_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(21,213,241);
+    background: linear-gradient(130deg, rgba(21,213,241,1) 15%, rgba(234,255,0,1) 84%);
+    height: 100vh;
+}
