@@ -11,12 +11,6 @@ function App() {
   const [isPlayedAgain, setIsPlayedAgain] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
-  // useEffect(() => {
-  //   fetch("https://opentdb.com/api.php?amount=5")
-  //     .then((res) => res.json())
-  //     .then((data) => (data.results));
-  // }, []);
-
   useEffect(() => {
     async function fetchData() {
       const questions = await getQuestions();
@@ -30,10 +24,6 @@ function App() {
     const data = await response.json();
     return data.results;
   }
-  // useEffect(() => {
-  //   const extractedQuestions = quiz.map((item) => item.question);
-  //   setQuestions(extractedQuestions);
-  // }, [quiz]);
 
   function startQuiz() {
     if (isPlayedAgain === false) {
@@ -93,7 +83,12 @@ function App() {
             <div className="question" key={question.id}>
               <h2>{question.question}</h2>
               {question.answers.map((answer, index) => (
-                <label className="button-label" key={index}>
+                <label
+                  className={`answer-label ${
+                    selectedAnswers[question.id] === answer ? "selected" : ""
+                  }`}
+                  key={index}
+                >
                   <input
                     type="radio"
                     name={question.id}
@@ -106,6 +101,7 @@ function App() {
               ))}
             </div>
           ))}
+          <button className="check_button">Check answers</button>
         </div>
       )}
       {console.log(questions)}
