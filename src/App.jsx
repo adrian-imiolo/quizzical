@@ -88,12 +88,12 @@ function App() {
       {isQuizStarted === false ? (
         <StartingPage startQuiz={startQuiz} />
       ) : (
-        <div>
+        <div className="question_container">
           {questions.map((question) => (
-            <div key={question.id}>
+            <div className="question" key={question.id}>
               <h2>{question.question}</h2>
               {question.answers.map((answer, index) => (
-                <label key={index}>
+                <label className="button-label" key={index}>
                   <input
                     type="radio"
                     name={question.id}
@@ -104,7 +104,6 @@ function App() {
                   {answer}
                 </label>
               ))}
-              <hr />
             </div>
           ))}
         </div>
