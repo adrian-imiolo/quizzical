@@ -78,6 +78,7 @@ function App() {
   function handleCheckAnswers() {
     setShowResults(true);
     setIsDisabled(true);
+    console.log(isDisabled);
   }
 
   return (
@@ -91,9 +92,17 @@ function App() {
               <h2>{question.question}</h2>
               {question.answers.map((answer, index) => (
                 <label
-                  className={`answer_label ${
-                    selectedAnswers[question.id] === answer ? "selected" : ""
-                  }`}
+                  className={`
+                  answer_label 
+                  ${selectedAnswers[question.id] === answer ? "selected" : ""} 
+                  ${
+                    showResults &&
+                    selectedAnswers[question.id] !== question.correct_answer &&
+                    selectedAnswers[question.id] === answer
+                      ? "wrong"
+                      : ""
+                  }
+                `}
                   key={index}
                 >
                   <input

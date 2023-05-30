@@ -53,10 +53,7 @@
     background-color: #D6DBF5;
   }
 
-  .answer_label input:disabled  {
-    color: grey; 
-    cursor: not-allowed;
-  }
+ 
 .check_button {
     border: none;
     border-radius: 15px;
@@ -66,4 +63,8 @@
     padding: 15px 20px;
     color: #fff;
 
+}
+
+.answer_label.wrong {
+    color: gray;
 }
