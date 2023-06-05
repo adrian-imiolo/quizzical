@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { decode } from "html-entities";
 
 function App() {
+  // please refactor this code, add additional components to make app more clear, try to understand this github repo to continue with this project https://github.com/Youkwhan/quizzical/blob/main/src/App.jsx
   const [questions, setQuestions] = useState([]);
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   const [isPlayedAgain, setIsPlayedAgain] = useState(false);
